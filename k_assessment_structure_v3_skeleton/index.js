@@ -24,7 +24,7 @@ class Field {
     constructor(field = [[]]) {
         this.field = field;          //this.field is a property of the class Field
         this.gamePlay = false;          // starts as false before the game starts
-        this.y = 0;
+        this.y = 0;                  //Coords for Player positions
         this.x = 0;
     }
 
@@ -54,7 +54,7 @@ class Field {
         }
         )
     }
-
+    
     updateGame(input) {                                                          // TODO: Refer to details in the method's codeblock
 
         const userInput = String(input).toLowerCase();
