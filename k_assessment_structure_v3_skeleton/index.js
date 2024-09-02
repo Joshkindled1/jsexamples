@@ -24,8 +24,8 @@ class Field {
     constructor(field = [[]]) {
         this.field = field;          //this.field is a property of the class Field
         this.gamePlay = false;          // starts as false before the game starts
-        this.a = 0;
-        this.b = 0;
+        this.y = 0;
+        this.x = 0;
     }
 
 
@@ -59,7 +59,7 @@ class Field {
 
         const userInput = String(input).toLowerCase();
 
-        switch (this.field[this.a][this.b]) {
+        switch (this.field[this.y][this.x]) {
             case HOLE:
                 console.log(LOST);
                 this.gamePlay = false;
@@ -70,7 +70,7 @@ class Field {
                 break;
             case GRASS:
                 console.log('Keep looking for the hat...');
-                this.field[this.a][this.b] = PLAYER;
+                this.field[this.y][this.x] = PLAYER;
                 break;
             case PLAYER:
                 console.log('You are stepping on *');
@@ -113,19 +113,19 @@ class Field {
             switch (input.toLowerCase()) {                         //feedback user's input
                 case "u":
                     console.log("**************************************************\nYou moved up!");
-                    this.a -= 1;
+                    this.y -= 1;
                     break;
                 case "d":
                     console.log("**************************************************\nYou moved down!");
-                    this.a += 1;
+                    this.y += 1;
                     break;
                 case "l":
                     console.log("**************************************************\nYou moved left");
-                    this.b -=1;
+                    this.x -=1;
                     break;
                 case "r":
                     console.log("**************************************************\nYou moved right");
-                    this.b +=1;
+                    this.x +=1;
                     break;
                 case "q":
                     console.log("**************************************************\nquit");
